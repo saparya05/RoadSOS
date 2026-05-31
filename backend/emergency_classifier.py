@@ -1,7 +1,3 @@
-"""
-Emergency classifier using keyword-based NLP to detect emergency types.
-"""
-
 import re
 from dataclasses import dataclass
 from typing import List, Tuple

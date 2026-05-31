@@ -1,7 +1,3 @@
-# ─────────────────────────────────────────────
-# RoadSOS – Requirements (fully offline-capable)
-# ─────────────────────────────────────────────
-
 # Core backend
 fastapi==0.115.0
 uvicorn[standard]==0.30.6
@@ -11,7 +7,7 @@ python-multipart==0.0.9
 # Frontend
 streamlit>=1.38.0
 
-# Geo / math  (pure Python – no network)
+# Geo / math
 geopy==2.4.1
 
 # HTTP (only used for optional FastAPI calls from frontend)
@@ -22,21 +18,10 @@ requests==2.32.3
 # Offline map (pure SVG – no tile server needed)
 # folium is NOT required anymore
 
-# Offline speech-to-text  (choose one or more)
-# Option 1: Whisper – works fully offline after tiny model download (~39 MB)
+# Offline speech-to-text
+# Whisper – works fully offline after tiny model download (~39 MB)
 openai-whisper>=20231117
-
-# Option 2: Vosk – fully offline, needs model folder in data/
-# pip install vosk
-# Then download model: https://alphacephei.com/vosk/models
-# Extract to: data/vosk-model-small-en-in-0.4/
-
-# Option 3: SpeechRecognition + pocketsphinx (offline sphinx engine)
-SpeechRecognition==3.10.4
-# pip install pocketsphinx   ← optional, enables offline sphinx fallback
 
 # Browser mic recording widget
 streamlit-mic-recorder>=0.0.4
 
-# Dev / testing
-httpx==0.27.2

@@ -9,14 +9,12 @@ import json
 from datetime import datetime
 from typing import List, Dict, Optional
 
-# ── DB file lives next to this module inside the data/ folder ─────────────────
+# DB file lives next to this module inside the data/ folder
 _BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB_PATH = os.path.join(_BASE_DIR, "data", "roadsos.db")
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Connection helper
-# ─────────────────────────────────────────────────────────────────────────────
 
 def _get_connection() -> sqlite3.Connection:
     """Return a new sqlite3 connection with row_factory set."""
@@ -26,9 +24,7 @@ def _get_connection() -> sqlite3.Connection:
     return conn
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Schema initialisation  (called once on import)
-# ─────────────────────────────────────────────────────────────────────────────
 
 def init_db() -> None:
     """Create all tables if they do not exist yet."""
@@ -38,7 +34,7 @@ def init_db() -> None:
     try:
         cursor = conn.cursor()
 
-        # ── sessions ──────────────────────────────────────────────────────────
+        # sessions 
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS sessions (
                 id              TEXT PRIMARY KEY,
@@ -51,7 +47,7 @@ def init_db() -> None:
             )
         """)
 
-        # ── chat_messages ─────────────────────────────────────────────────────
+        # chat_messages
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS chat_messages (
                 id              INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -69,7 +65,7 @@ def init_db() -> None:
             )
         """)
 
-        # ── emergency_log ──────────────────────────────────────────────────────
+        # emergency_log
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS emergency_log (
                 id              INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -94,9 +90,7 @@ def init_db() -> None:
 init_db()
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Session helpers
-# ─────────────────────────────────────────────────────────────────────────────
 
 def upsert_session(session_id: str, title: str = None,
                    emergency_type: str = None,
@@ -154,9 +148,7 @@ def delete_session(session_id: str) -> None:
         conn.close()
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Chat message helpers
-# ─────────────────────────────────────────────────────────────────────────────
 
 def save_chat_turn(
     session_id:     str,
@@ -247,9 +239,7 @@ def get_all_sessions_with_last_message() -> List[Dict]:
         conn.close()
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Emergency log helpers
-# ─────────────────────────────────────────────────────────────────────────────
 
 def log_emergency(
     session_id:     str,

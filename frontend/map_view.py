@@ -15,7 +15,7 @@ import html as _html
 from typing import List, Dict, Tuple
 
 
-# ── Service styling ───────────────────────────────────────────────────────────
+# Service styling 
 
 _COLORS = {
     "hospital":       "#E53E3E",
@@ -46,7 +46,7 @@ _ICONS = {
 }
 
 
-# ── Projection helpers ────────────────────────────────────────────────────────
+# Projection helpers
 
 def _mercator(lat_deg: float, lon_deg: float,
               center_lat: float, center_lon: float,
@@ -78,7 +78,7 @@ def _auto_scale(services: List[Dict], center_lat: float, center_lon: float,
     return min(scale_x, scale_y, 8000.0)
 
 
-# ── Map builder ───────────────────────────────────────────────────────────────
+# Map builder
 
 def map_to_html(user_lat: float, user_lon: float,
                 services: List[Dict]) -> str:
@@ -93,7 +93,7 @@ def map_to_html(user_lat: float, user_lon: float,
     def xy(lat: float, lon: float) -> Tuple[float, float]:
         return _mercator(lat, lon, user_lat, user_lon, scale, W, H)
 
-    # ── Build SVG elements ──────────────────────────────────────────────────
+    # Build SVG elements
     svg_parts: List[str] = []
     tooltip_data: List[str] = []   # JS data for popups
 
@@ -212,7 +212,7 @@ def map_to_html(user_lat: float, user_lon: float,
         + "\n</svg>"
     )
 
-    # ── Popup overlay + JS ──────────────────────────────────────────────────
+    # Popup overlay + JS
     popup_html = """
 <div id="sos-popup" style="
   display:none; position:absolute; top:50%; left:50%;
@@ -284,7 +284,7 @@ def _json_str(s: str) -> str:
     return _j.dumps(str(s))
 
 
-# ── Compatibility shim (so old callers still work) ────────────────────────────
+# Compatibility shim (so old callers still work)
 
 def create_emergency_map(user_lat, user_lon, services, zoom_start=14):
     """Compatibility stub – returns the HTML string directly."""

@@ -1,10 +1,3 @@
-"""
-RoadSOS – Service Finder  (fully offline)
-
-Never makes any network calls.
-All data comes from data/offline_services.json.
-"""
-
 from typing import List, Dict, Optional
 from backend.offline_services import (
     get_offline_services,

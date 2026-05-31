@@ -327,7 +327,7 @@ section[data-testid="stSidebar"] .streamlit-expanderHeader {
 """, unsafe_allow_html=True)
 
 
-# ── Helpers ────────────────────────────────────────────────────────────────────
+# Helpers
 
 def _api(endpoint: str, method: str = "GET", payload: dict = None) -> dict:
     """Call FastAPI; silently return {} if unavailable (offline)."""
@@ -442,7 +442,7 @@ def _new_chat() -> None:
     st.rerun()
 
 
-# ── HTML render helpers ────────────────────────────────────────────────────────
+# HTML render helpers
 
 def _md(txt: str) -> str:
     """Minimal markdown → HTML (bold + line breaks)."""
@@ -541,7 +541,7 @@ def _render_map() -> None:
         )
 
 
-# ── Silent geolocation injection ──────────────────────────────────────────────
+# Silent geolocation injection
 
 def _inject_geo() -> None:
     """Write GPS coords to URL query params; Streamlit picks them up on rerun."""
@@ -579,7 +579,7 @@ _pickup_geo()
 _inject_geo()
 
 
-# ── Voice transcription ────────────────────────────────────────────────────────
+# Voice transcription
 
 def _transcribe(audio_bytes: bytes) -> str:
     try:
@@ -604,7 +604,7 @@ def _transcribe(audio_bytes: bytes) -> str:
         return ""
 
 
-# ── SIDEBAR ───────────────────────────────────────────────────────────────────
+# SIDEBAR
 with st.sidebar:
     st.markdown(
         '<div class="sb-logo">'
@@ -709,7 +709,7 @@ with st.sidebar:
     st.markdown('</div>', unsafe_allow_html=True)
 
 
-# ── MAIN AREA ──────────────────────────────────────────────────────────────────
+# MAIN AREA 
 
 # Header
 st.markdown(
@@ -773,7 +773,7 @@ if st.session_state.show_map:
     with mc:
         _render_map()
 
-# ── Input row: mic + chat input ────────────────────────────────────────────────
+# Input row: mic + chat input
 try:
     from streamlit_mic_recorder import mic_recorder
     mic_col, inp_col = st.columns([1, 11])
@@ -804,7 +804,7 @@ except ImportError:
         key="chat_in_fallback",
     )
 
-# ── Process inputs (exactly once per rerun) ────────────────────────────────────
+# Process inputs (exactly once per rerun)
 pending = st.session_state.pending_input
 if pending:
     st.session_state.pending_input = None

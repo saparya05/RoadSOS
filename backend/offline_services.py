@@ -28,7 +28,7 @@ SERVICE_TYPE_ICONS = {
 }
 
 
-# ── math helpers ──────────────────────────────────────────────────────────────
+# math helpers
 
 def haversine_distance(lat1: float, lon1: float,
                        lat2: float, lon2: float) -> float:
@@ -53,7 +53,7 @@ def get_bearing(lat1: float, lon1: float,
     return ["N", "NE", "E", "SE", "S", "SW", "W", "NW"][round(bearing / 45) % 8]
 
 
-# ── data loader ───────────────────────────────────────────────────────────────
+# data loader
 
 def _load() -> Dict:
     try:
@@ -65,7 +65,7 @@ def _load() -> Dict:
         return {"india": {}, "cities": {}, "generic_services": []}
 
 
-# ── public API ────────────────────────────────────────────────────────────────
+# public API 
 
 def _nearest_city(lat: float, lon: float, data: Dict) -> Optional[str]:
     """Return name of the city in offline data closest to (lat, lon)."""

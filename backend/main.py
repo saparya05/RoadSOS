@@ -1,9 +1,3 @@
-"""
-RoadSOS – FastAPI Backend  (fully offline)
-Run from project root:
-    uvicorn backend.main:app --reload
-"""
-
 import sys, os, uuid
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -24,7 +18,6 @@ from backend.database import (
     get_emergency_stats, upsert_session,
 )
 
-# ─────────────────────────────────────────────────────────────────────────────
 app = FastAPI(
     title="RoadSOS API",
     description="AI Emergency Assistant – fully offline capable",
@@ -40,7 +33,7 @@ app.add_middleware(
 )
 
 
-# ── Pydantic models ───────────────────────────────────────────────────────────
+# Pydantic models
 
 class ChatRequest(BaseModel):
     text:       str   = Field(..., min_length=1)
@@ -62,7 +55,7 @@ class QuickEmergencyRequest(BaseModel):
     lon: float
 
 
-# ── Routes ─────────────────────────────────────────────────────────────────────
+# Routes
 
 @app.get("/")
 def root():
@@ -206,7 +199,7 @@ def quick_emergency(req: QuickEmergencyRequest):
     return get_quick_response(req.emergency_type, req.lat, req.lon)
 
 
-# ── Session / history ─────────────────────────────────────────────────────────
+# Session / history
 
 @app.get("/sessions")
 def list_sessions():

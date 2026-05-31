@@ -1,9 +1,3 @@
-"""
-RoadSOS – Chatbot
-Handles conversation state, follow-up logic, and AI response generation.
-Never echoes the user's own words back at them.
-"""
-
 import re
 from typing import List, Dict, Optional, Tuple
 from dataclasses import dataclass, field
@@ -18,13 +12,11 @@ from backend.emergency_classifier import (
 from backend.service_finder import find_services
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Data classes
-# ─────────────────────────────────────────────────────────────────────────────
 
 @dataclass
 class ChatMessage:
-    role: str                               # "user" | "assistant"
+    role: str                               # user
     content: str
     timestamp: str = ""
     emergency_category: Optional[str] = None
@@ -54,9 +46,7 @@ def clear_conversation(session_id: str) -> None:
     _conversations.pop(session_id, None)
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Constants / lookup tables
-# ─────────────────────────────────────────────────────────────────────────────
 
 _GREETINGS = {
     "hi", "hello", "hey", "start", "help", "sos",
@@ -227,9 +217,7 @@ def _build_followup_response(
     return "\n".join(parts)
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Public API
-# ─────────────────────────────────────────────────────────────────────────────
 
 def handle_chat(
     user_text: str,
