@@ -1,0 +1,278 @@
+{
+  "india": {
+    "national_emergency": [
+      {"name": "National Emergency",        "phone": "112",  "type": "emergency"},
+      {"name": "Police",                    "phone": "100",  "type": "police"},
+      {"name": "Ambulance (EMRI)",          "phone": "108",  "type": "ambulance"},
+      {"name": "Fire Brigade",              "phone": "101",  "type": "fire_station"},
+      {"name": "Highway Patrol / NHAI",     "phone": "1033", "type": "highway_patrol"},
+      {"name": "Road Accident Helpline",    "phone": "1073", "type": "ambulance"},
+      {"name": "Women Helpline",            "phone": "1091", "type": "helpline"},
+      {"name": "Disaster Management NDRF",  "phone": "1078", "type": "helpline"},
+      {"name": "Child Helpline",            "phone": "1098", "type": "helpline"},
+      {"name": "Senior Citizen Helpline",   "phone": "1291", "type": "helpline"}
+    ],
+    "towing_services": [
+      {"name": "NHAI Helpline (Towing)",        "phone": "1033",        "type": "towing"},
+      {"name": "GoMechanic Roadside Assistance","phone": "9696-969696", "type": "towing"},
+      {"name": "myTVS Roadside Assistance",     "phone": "1800-258-5555","type": "towing"},
+      {"name": "Maruti RSA (24x7)",             "phone": "1800-102-1800","type": "towing"},
+      {"name": "TVS AA (24x7)",                 "phone": "1800-258-5555","type": "towing"}
+    ],
+    "ngos": [
+      {"name": "iCall Mental Health",       "phone": "9152987821",  "type": "ngo"},
+      {"name": "Vandrevala Foundation",     "phone": "1860-2662-345","type": "ngo"},
+      {"name": "Lifeline Foundation",       "phone": "033-40447437", "type": "ngo"},
+      {"name": "Snehi (Crisis Support)",    "phone": "044-24640050", "type": "ngo"}
+    ]
+  },
+  "cities": {
+    "delhi": {
+      "lat": 28.6139, "lon": 77.2090,
+      "services": [
+        {"name": "AIIMS Emergency",          "phone": "011-26588500", "type": "hospital",       "lat": 28.5665, "lon": 77.2100, "address": "Ansari Nagar, New Delhi"},
+        {"name": "Safdarjung Hospital",      "phone": "011-26730000", "type": "hospital",       "lat": 28.5685, "lon": 77.2040, "address": "Ansari Nagar West, New Delhi"},
+        {"name": "Ram Manohar Lohia Hosp",   "phone": "011-23365525", "type": "hospital",       "lat": 28.6290, "lon": 77.2090, "address": "Baba Kharak Singh Marg, Delhi"},
+        {"name": "Lady Hardinge Hospital",   "phone": "011-23408360", "type": "hospital",       "lat": 28.6358, "lon": 77.2031, "address": "Connaught Place, New Delhi"},
+        {"name": "GTB Hospital",             "phone": "011-22593415", "type": "hospital",       "lat": 28.6712, "lon": 77.3002, "address": "Dilshad Garden, Delhi"},
+        {"name": "Delhi Police Control",     "phone": "011-23490000", "type": "police",         "lat": 28.6353, "lon": 77.2250, "address": "ITO, New Delhi"},
+        {"name": "Delhi Police HQ",          "phone": "100",          "type": "police",         "lat": 28.6270, "lon": 77.2190, "address": "Connaught Place, Delhi"},
+        {"name": "Delhi Fire Service HQ",    "phone": "011-27244444", "type": "fire_station",   "lat": 28.6129, "lon": 77.2295, "address": "Parliament Street, New Delhi"},
+        {"name": "Karol Bagh Fire Station",  "phone": "011-25720700", "type": "fire_station",   "lat": 28.6514, "lon": 77.1907, "address": "Karol Bagh, Delhi"},
+        {"name": "Delhi Traffic Police",     "phone": "011-25844444", "type": "highway_patrol", "lat": 28.6100, "lon": 77.2200, "address": "ITO, New Delhi"},
+        {"name": "GoMechanic Delhi",         "phone": "9696969696",   "type": "mechanic",       "lat": 28.6500, "lon": 77.2300, "address": "Connaught Place, New Delhi"},
+        {"name": "Carnation Auto Delhi",     "phone": "011-47474747", "type": "mechanic",       "lat": 28.6420, "lon": 77.1380, "address": "Janakpuri, New Delhi"},
+        {"name": "Delhi Towing Service",     "phone": "011-24320053", "type": "towing",         "lat": 28.6200, "lon": 77.2100, "address": "New Delhi"},
+        {"name": "IndiGo Puncture Shop",     "phone": "9810012345",   "type": "puncture_shop",  "lat": 28.6250, "lon": 77.2150, "address": "Connaught Place, Delhi"}
+      ]
+    },
+    "mumbai": {
+      "lat": 19.0760, "lon": 72.8777,
+      "services": [
+        {"name": "KEM Hospital",             "phone": "022-24107000", "type": "hospital",       "lat": 19.0006, "lon": 72.8422, "address": "Parel, Mumbai"},
+        {"name": "Nair Hospital",            "phone": "022-23027600", "type": "hospital",       "lat": 19.0330, "lon": 72.8390, "address": "Mumbai Central"},
+        {"name": "Sion Hospital",            "phone": "022-24076381", "type": "hospital",       "lat": 19.0444, "lon": 72.8622, "address": "Sion, Mumbai"},
+        {"name": "Cooper Hospital",          "phone": "022-26204218", "type": "hospital",       "lat": 19.1073, "lon": 72.8378, "address": "Vile Parle, Mumbai"},
+        {"name": "Mumbai Police Control",    "phone": "022-22620111", "type": "police",         "lat": 18.9388, "lon": 72.8354, "address": "CST, Mumbai"},
+        {"name": "Andheri Police Station",   "phone": "022-26360415", "type": "police",         "lat": 19.1136, "lon": 72.8697, "address": "Andheri, Mumbai"},
+        {"name": "Mumbai Fire Brigade HQ",   "phone": "022-23007600", "type": "fire_station",   "lat": 18.9322, "lon": 72.8264, "address": "Byculla, Mumbai"},
+        {"name": "Mumbai Traffic Police",    "phone": "022-24929090", "type": "highway_patrol", "lat": 18.9400, "lon": 72.8350, "address": "Mumbai"},
+        {"name": "Mumbai Ambulance (108)",   "phone": "108",          "type": "ambulance",      "lat": 19.0760, "lon": 72.8777, "address": "Mumbai"},
+        {"name": "Rapid Response Towing",    "phone": "022-28232400", "type": "towing",         "lat": 19.0760, "lon": 72.8700, "address": "Mumbai"},
+        {"name": "Automobile Association",   "phone": "022-24948759", "type": "mechanic",       "lat": 19.0200, "lon": 72.8500, "address": "Lower Parel, Mumbai"}
+      ]
+    },
+    "bangalore": {
+      "lat": 12.9716, "lon": 77.5946,
+      "services": [
+        {"name": "Nimhans Emergency",        "phone": "080-46110007", "type": "hospital",       "lat": 12.9408, "lon": 77.5960, "address": "Hosur Road, Bangalore"},
+        {"name": "Victoria Hospital",        "phone": "080-26703000", "type": "hospital",       "lat": 12.9635, "lon": 77.5800, "address": "KR Market, Bangalore"},
+        {"name": "Bowring Hospital",         "phone": "080-25548350", "type": "hospital",       "lat": 12.9783, "lon": 77.6132, "address": "Shivaji Nagar, Bangalore"},
+        {"name": "Rajiv Gandhi Hospital",    "phone": "080-23330423", "type": "hospital",       "lat": 13.0358, "lon": 77.5970, "address": "Jayanagar, Bangalore"},
+        {"name": "Bangalore Police Control", "phone": "080-22942222", "type": "police",         "lat": 12.9718, "lon": 77.5938, "address": "Cubbon Park, Bangalore"},
+        {"name": "Koramangala Police",       "phone": "080-25530585", "type": "police",         "lat": 12.9340, "lon": 77.6270, "address": "Koramangala, Bangalore"},
+        {"name": "Bangalore Fire Station",   "phone": "080-22971500", "type": "fire_station",   "lat": 12.9762, "lon": 77.5929, "address": "Shivajinagar, Bangalore"},
+        {"name": "Traffic Police Control",   "phone": "080-22868800", "type": "highway_patrol", "lat": 12.9716, "lon": 77.5946, "address": "Bangalore"},
+        {"name": "Bangalore Ambulance",      "phone": "108",          "type": "ambulance",      "lat": 12.9716, "lon": 77.5946, "address": "Bangalore"},
+        {"name": "GoMechanic Bangalore",     "phone": "9696969696",   "type": "mechanic",       "lat": 12.9780, "lon": 77.6010, "address": "Indiranagar, Bangalore"},
+        {"name": "City Towing Services",     "phone": "080-41512345", "type": "towing",         "lat": 12.9600, "lon": 77.5800, "address": "Bangalore"}
+      ]
+    },
+    "chennai": {
+      "lat": 13.0827, "lon": 80.2707,
+      "services": [
+        {"name": "Govt General Hospital",    "phone": "044-25305000", "type": "hospital",       "lat": 13.0836, "lon": 80.2824, "address": "Park Town, Chennai"},
+        {"name": "Stanley Hospital",         "phone": "044-25281899", "type": "hospital",       "lat": 13.1073, "lon": 80.2887, "address": "Old Jail Road, Chennai"},
+        {"name": "Rajiv Gandhi Govt Hosp",   "phone": "044-28193009", "type": "hospital",       "lat": 13.0827, "lon": 80.2100, "address": "Omandurar Estate, Chennai"},
+        {"name": "Chennai Police Control",   "phone": "044-23452360", "type": "police",         "lat": 13.0827, "lon": 80.2707, "address": "Vepery, Chennai"},
+        {"name": "T.Nagar Police Station",   "phone": "044-24340030", "type": "police",         "lat": 13.0418, "lon": 80.2341, "address": "T.Nagar, Chennai"},
+        {"name": "Chennai Fire Service",     "phone": "044-28592155", "type": "fire_station",   "lat": 13.0900, "lon": 80.2700, "address": "Egmore, Chennai"},
+        {"name": "Chennai Traffic Police",   "phone": "044-28447747", "type": "highway_patrol", "lat": 13.0827, "lon": 80.2707, "address": "Chennai"},
+        {"name": "Chennai Ambulance",        "phone": "108",          "type": "ambulance",      "lat": 13.0827, "lon": 80.2707, "address": "Chennai"},
+        {"name": "Pallavan Auto Service",    "phone": "044-24790000", "type": "mechanic",       "lat": 13.0500, "lon": 80.2600, "address": "Chennai"},
+        {"name": "Chennai Towing",           "phone": "044-25241000", "type": "towing",         "lat": 13.0700, "lon": 80.2500, "address": "Chennai"}
+      ]
+    },
+    "hyderabad": {
+      "lat": 17.3850, "lon": 78.4867,
+      "services": [
+        {"name": "Osmania General Hospital", "phone": "040-24600150", "type": "hospital",       "lat": 17.3713, "lon": 78.4754, "address": "Afzalgunj, Hyderabad"},
+        {"name": "Gandhi Hospital",          "phone": "040-23681100", "type": "hospital",       "lat": 17.4122, "lon": 78.4862, "address": "Musheerabad, Hyderabad"},
+        {"name": "Niloufer Hospital",        "phone": "040-23302220", "type": "hospital",       "lat": 17.3966, "lon": 78.4752, "address": "Red Hills, Hyderabad"},
+        {"name": "Hyderabad Police Control", "phone": "040-27852425", "type": "police",         "lat": 17.3850, "lon": 78.4867, "address": "Hyderabad"},
+        {"name": "Banjara Hills Police",     "phone": "040-23540101", "type": "police",         "lat": 17.4158, "lon": 78.4457, "address": "Banjara Hills, Hyderabad"},
+        {"name": "Hyd Fire Station HQ",      "phone": "040-23232000", "type": "fire_station",   "lat": 17.3900, "lon": 78.4800, "address": "Hyderabad"},
+        {"name": "TS Traffic Police",        "phone": "040-27852425", "type": "highway_patrol", "lat": 17.3850, "lon": 78.4867, "address": "Hyderabad"},
+        {"name": "Hyderabad Ambulance",      "phone": "108",          "type": "ambulance",      "lat": 17.3850, "lon": 78.4867, "address": "Hyderabad"},
+        {"name": "GoMechanic Hyderabad",     "phone": "9696969696",   "type": "mechanic",       "lat": 17.4000, "lon": 78.4900, "address": "Banjara Hills, Hyderabad"},
+        {"name": "Hyderabad Towing",         "phone": "040-27654321", "type": "towing",         "lat": 17.3800, "lon": 78.4700, "address": "Hyderabad"}
+      ]
+    },
+    "kolkata": {
+      "lat": 22.5726, "lon": 88.3639,
+      "services": [
+        {"name": "SSKM Hospital",            "phone": "033-22041739", "type": "hospital",       "lat": 22.5445, "lon": 88.3426, "address": "AJC Bose Road, Kolkata"},
+        {"name": "NRS Medical College",      "phone": "033-22654050", "type": "hospital",       "lat": 22.5620, "lon": 88.3870, "address": "Shyambazar, Kolkata"},
+        {"name": "Medical College Kolkata",  "phone": "033-22551901", "type": "hospital",       "lat": 22.5750, "lon": 88.3620, "address": "College Street, Kolkata"},
+        {"name": "Kolkata Police Control",   "phone": "033-22143004", "type": "police",         "lat": 22.5726, "lon": 88.3639, "address": "Lalbazar, Kolkata"},
+        {"name": "Kolkata Fire Service",     "phone": "033-22371234", "type": "fire_station",   "lat": 22.5600, "lon": 88.3500, "address": "Kolkata"},
+        {"name": "Kolkata Traffic Police",   "phone": "033-22371234", "type": "highway_patrol", "lat": 22.5726, "lon": 88.3639, "address": "Kolkata"},
+        {"name": "West Bengal Ambulance",    "phone": "108",          "type": "ambulance",      "lat": 22.5726, "lon": 88.3639, "address": "Kolkata"},
+        {"name": "Kolkata Breakdown Service","phone": "033-24761000", "type": "mechanic",       "lat": 22.5700, "lon": 88.3600, "address": "Kolkata"},
+        {"name": "KMC Towing",               "phone": "033-22861212", "type": "towing",         "lat": 22.5600, "lon": 88.3500, "address": "Kolkata"}
+      ]
+    },
+    "pune": {
+      "lat": 18.5204, "lon": 73.8567,
+      "services": [
+        {"name": "Sassoon General Hospital", "phone": "020-26128000", "type": "hospital",       "lat": 18.5204, "lon": 73.8770, "address": "Pune Station Road, Pune"},
+        {"name": "Jehangir Hospital",        "phone": "020-66459999", "type": "hospital",       "lat": 18.5338, "lon": 73.8895, "address": "Sassoon Road, Pune"},
+        {"name": "Ruby Hall Clinic",         "phone": "020-66455500", "type": "hospital",       "lat": 18.5350, "lon": 73.8920, "address": "Sassoon Road, Pune"},
+        {"name": "Pune Police Control",      "phone": "020-26123346", "type": "police",         "lat": 18.5204, "lon": 73.8567, "address": "Shivaji Nagar, Pune"},
+        {"name": "Pune Fire Brigade",        "phone": "020-25534444", "type": "fire_station",   "lat": 18.5204, "lon": 73.8600, "address": "Pune"},
+        {"name": "Pune Traffic Police",      "phone": "020-26123000", "type": "highway_patrol", "lat": 18.5204, "lon": 73.8567, "address": "Pune"},
+        {"name": "Pune Ambulance",           "phone": "108",          "type": "ambulance",      "lat": 18.5204, "lon": 73.8567, "address": "Pune"},
+        {"name": "Maruti Service Pune",      "phone": "020-40131000", "type": "mechanic",       "lat": 18.5300, "lon": 73.8500, "address": "Deccan, Pune"},
+        {"name": "Pune Towing Service",      "phone": "020-24540000", "type": "towing",         "lat": 18.5100, "lon": 73.8400, "address": "Pune"}
+      ]
+    },
+    "ahmedabad": {
+      "lat": 23.0225, "lon": 72.5714,
+      "services": [
+        {"name": "Civil Hospital Ahmedabad", "phone": "079-22681067", "type": "hospital",       "lat": 23.0340, "lon": 72.5840, "address": "Asarwa, Ahmedabad"},
+        {"name": "VS Hospital",              "phone": "079-22640050", "type": "hospital",       "lat": 23.0260, "lon": 72.5670, "address": "Ellisbridge, Ahmedabad"},
+        {"name": "Ahmedabad Police Control", "phone": "079-25621111", "type": "police",         "lat": 23.0225, "lon": 72.5714, "address": "Shahibaug, Ahmedabad"},
+        {"name": "Ahmedabad Fire Brigade",   "phone": "079-25632666", "type": "fire_station",   "lat": 23.0300, "lon": 72.5600, "address": "Ahmedabad"},
+        {"name": "Gujarat Ambulance",        "phone": "108",          "type": "ambulance",      "lat": 23.0225, "lon": 72.5714, "address": "Ahmedabad"},
+        {"name": "Ahmedabad Traffic Police", "phone": "079-25631111", "type": "highway_patrol", "lat": 23.0225, "lon": 72.5714, "address": "Ahmedabad"},
+        {"name": "Ahmedabad Mechanic",       "phone": "079-26585000", "type": "mechanic",       "lat": 23.0300, "lon": 72.5800, "address": "Ahmedabad"},
+        {"name": "Ahmedabad Towing",         "phone": "079-27542000", "type": "towing",         "lat": 23.0200, "lon": 72.5600, "address": "Ahmedabad"}
+      ]
+    },
+    "jaipur": {
+      "lat": 26.9124, "lon": 75.7873,
+      "services": [
+        {"name": "SMS Hospital Jaipur",      "phone": "0141-2518888", "type": "hospital",       "lat": 26.9091, "lon": 75.8093, "address": "JLN Marg, Jaipur"},
+        {"name": "Jaipur Hospital",          "phone": "0141-2234000", "type": "hospital",       "lat": 26.9200, "lon": 75.7950, "address": "Malviya Nagar, Jaipur"},
+        {"name": "Jaipur Police Control",    "phone": "0141-2744000", "type": "police",         "lat": 26.9124, "lon": 75.7873, "address": "Jaipur"},
+        {"name": "Jaipur Fire Brigade",      "phone": "0141-2744101", "type": "fire_station",   "lat": 26.9200, "lon": 75.7900, "address": "Jaipur"},
+        {"name": "Rajasthan Ambulance",      "phone": "108",          "type": "ambulance",      "lat": 26.9124, "lon": 75.7873, "address": "Jaipur"},
+        {"name": "Jaipur Traffic Police",    "phone": "0141-2744500", "type": "highway_patrol", "lat": 26.9124, "lon": 75.7873, "address": "Jaipur"},
+        {"name": "Jaipur Auto Repair",       "phone": "0141-2560000", "type": "mechanic",       "lat": 26.9000, "lon": 75.7800, "address": "Jaipur"}
+      ]
+    },
+    "lucknow": {
+      "lat": 26.8467, "lon": 80.9462,
+      "services": [
+        {"name": "KGMU Hospital",            "phone": "0522-2257540", "type": "hospital",       "lat": 26.8629, "lon": 80.9317, "address": "Shahmina Road, Lucknow"},
+        {"name": "Civil Hospital Lucknow",   "phone": "0522-2621999", "type": "hospital",       "lat": 26.8550, "lon": 80.9400, "address": "Lucknow"},
+        {"name": "Lucknow Police Control",   "phone": "0522-2610577", "type": "police",         "lat": 26.8467, "lon": 80.9462, "address": "Lucknow"},
+        {"name": "Lucknow Fire Service",     "phone": "0522-2201101", "type": "fire_station",   "lat": 26.8500, "lon": 80.9500, "address": "Lucknow"},
+        {"name": "UP Ambulance",             "phone": "108",          "type": "ambulance",      "lat": 26.8467, "lon": 80.9462, "address": "Lucknow"},
+        {"name": "Lucknow Traffic Police",   "phone": "0522-2201212", "type": "highway_patrol", "lat": 26.8467, "lon": 80.9462, "address": "Lucknow"}
+      ]
+    },
+    "surat": {
+      "lat": 21.1702, "lon": 72.8311,
+      "services": [
+        {"name": "New Civil Hospital Surat", "phone": "0261-2424000", "type": "hospital",       "lat": 21.2108, "lon": 72.8374, "address": "Majura Gate, Surat"},
+        {"name": "Surat Police Control",     "phone": "0261-2452500", "type": "police",         "lat": 21.1702, "lon": 72.8311, "address": "Surat"},
+        {"name": "Surat Fire Brigade",       "phone": "0261-2450101", "type": "fire_station",   "lat": 21.1800, "lon": 72.8400, "address": "Surat"},
+        {"name": "Gujarat Ambulance Surat",  "phone": "108",          "type": "ambulance",      "lat": 21.1702, "lon": 72.8311, "address": "Surat"},
+        {"name": "Surat Traffic Police",     "phone": "0261-2452700", "type": "highway_patrol", "lat": 21.1702, "lon": 72.8311, "address": "Surat"}
+      ]
+    },
+    "patna": {
+      "lat": 25.5941, "lon": 85.1376,
+      "services": [
+        {"name": "PMCH Patna",               "phone": "0612-2300500", "type": "hospital",       "lat": 25.6099, "lon": 85.1342, "address": "Ashok Rajpath, Patna"},
+        {"name": "Patna Police Control",     "phone": "0612-2201540", "type": "police",         "lat": 25.5941, "lon": 85.1376, "address": "Patna"},
+        {"name": "Patna Fire Brigade",       "phone": "0612-2230101", "type": "fire_station",   "lat": 25.6000, "lon": 85.1400, "address": "Patna"},
+        {"name": "Bihar Ambulance",          "phone": "108",          "type": "ambulance",      "lat": 25.5941, "lon": 85.1376, "address": "Patna"},
+        {"name": "Patna Traffic Police",     "phone": "0612-2201550", "type": "highway_patrol", "lat": 25.5941, "lon": 85.1376, "address": "Patna"}
+      ]
+    },
+    "bhopal": {
+      "lat": 23.2599, "lon": 77.4126,
+      "services": [
+        {"name": "Hamidia Hospital Bhopal",  "phone": "0755-2540222", "type": "hospital",       "lat": 23.2615, "lon": 77.4013, "address": "Royal Market, Bhopal"},
+        {"name": "Bhopal Police Control",    "phone": "0755-2443500", "type": "police",         "lat": 23.2599, "lon": 77.4126, "address": "Bhopal"},
+        {"name": "Bhopal Fire Brigade",      "phone": "0755-2740101", "type": "fire_station",   "lat": 23.2700, "lon": 77.4200, "address": "Bhopal"},
+        {"name": "MP Ambulance",             "phone": "108",          "type": "ambulance",      "lat": 23.2599, "lon": 77.4126, "address": "Bhopal"},
+        {"name": "Bhopal Traffic Police",    "phone": "0755-2443600", "type": "highway_patrol", "lat": 23.2599, "lon": 77.4126, "address": "Bhopal"}
+      ]
+    },
+    "indore": {
+      "lat": 22.7196, "lon": 75.8577,
+      "services": [
+        {"name": "MY Hospital Indore",       "phone": "0731-2433222", "type": "hospital",       "lat": 22.7138, "lon": 75.8752, "address": "MYH Road, Indore"},
+        {"name": "Indore Police Control",    "phone": "0731-2529300", "type": "police",         "lat": 22.7196, "lon": 75.8577, "address": "Indore"},
+        {"name": "Indore Fire Brigade",      "phone": "0731-2520101", "type": "fire_station",   "lat": 22.7200, "lon": 75.8600, "address": "Indore"},
+        {"name": "MP Ambulance Indore",      "phone": "108",          "type": "ambulance",      "lat": 22.7196, "lon": 75.8577, "address": "Indore"},
+        {"name": "Indore Traffic Police",    "phone": "0731-2529400", "type": "highway_patrol", "lat": 22.7196, "lon": 75.8577, "address": "Indore"}
+      ]
+    },
+    "nagpur": {
+      "lat": 21.1458, "lon": 79.0882,
+      "services": [
+        {"name": "Mayo Hospital Nagpur",     "phone": "0712-2721532", "type": "hospital",       "lat": 21.1529, "lon": 79.1082, "address": "Central Avenue, Nagpur"},
+        {"name": "Nagpur Police Control",    "phone": "0712-2562143", "type": "police",         "lat": 21.1458, "lon": 79.0882, "address": "Nagpur"},
+        {"name": "Nagpur Fire Brigade",      "phone": "0712-2720101", "type": "fire_station",   "lat": 21.1500, "lon": 79.0900, "address": "Nagpur"},
+        {"name": "MH Ambulance Nagpur",      "phone": "108",          "type": "ambulance",      "lat": 21.1458, "lon": 79.0882, "address": "Nagpur"},
+        {"name": "Nagpur Traffic Police",    "phone": "0712-2562200", "type": "highway_patrol", "lat": 21.1458, "lon": 79.0882, "address": "Nagpur"}
+      ]
+    },
+    "visakhapatnam": {
+      "lat": 17.6868, "lon": 83.2185,
+      "services": [
+        {"name": "KGH Hospital Vizag",       "phone": "0891-2564891", "type": "hospital",       "lat": 17.6868, "lon": 83.2185, "address": "One Town, Visakhapatnam"},
+        {"name": "Vizag Police Control",     "phone": "0891-2564143", "type": "police",         "lat": 17.6868, "lon": 83.2185, "address": "Visakhapatnam"},
+        {"name": "Vizag Fire Brigade",       "phone": "0891-2562101", "type": "fire_station",   "lat": 17.6900, "lon": 83.2200, "address": "Visakhapatnam"},
+        {"name": "AP Ambulance Vizag",       "phone": "108",          "type": "ambulance",      "lat": 17.6868, "lon": 83.2185, "address": "Visakhapatnam"},
+        {"name": "Vizag Traffic Police",     "phone": "0891-2562200", "type": "highway_patrol", "lat": 17.6868, "lon": 83.2185, "address": "Visakhapatnam"}
+      ]
+    },
+    "kochi": {
+      "lat": 9.9312, "lon": 76.2673,
+      "services": [
+        {"name": "Medical College Kochi",    "phone": "0484-2800700", "type": "hospital",       "lat": 9.9987, "lon": 76.2964, "address": "Ernakulam, Kochi"},
+        {"name": "Govt General Hosp Kochi",  "phone": "0484-2361251", "type": "hospital",       "lat": 9.9640, "lon": 76.2820, "address": "Ernakulam, Kochi"},
+        {"name": "Kochi Police Control",     "phone": "0484-2361440", "type": "police",         "lat": 9.9312, "lon": 76.2673, "address": "Kochi"},
+        {"name": "Kochi Fire Brigade",       "phone": "0484-2361101", "type": "fire_station",   "lat": 9.9400, "lon": 76.2700, "address": "Kochi"},
+        {"name": "Kerala Ambulance",         "phone": "108",          "type": "ambulance",      "lat": 9.9312, "lon": 76.2673, "address": "Kochi"},
+        {"name": "Kochi Traffic Police",     "phone": "0484-2361300", "type": "highway_patrol", "lat": 9.9312, "lon": 76.2673, "address": "Kochi"}
+      ]
+    },
+    "chandigarh": {
+      "lat": 30.7333, "lon": 76.7794,
+      "services": [
+        {"name": "PGIMER Chandigarh",        "phone": "0172-2747585", "type": "hospital",       "lat": 30.7650, "lon": 76.7780, "address": "Sector 12, Chandigarh"},
+        {"name": "Govt Medical College",     "phone": "0172-2665253", "type": "hospital",       "lat": 30.7400, "lon": 76.7700, "address": "Sector 32, Chandigarh"},
+        {"name": "Chandigarh Police Control","phone": "0172-2740126", "type": "police",         "lat": 30.7333, "lon": 76.7794, "address": "Sector 9, Chandigarh"},
+        {"name": "Chandigarh Fire Brigade",  "phone": "0172-2741101", "type": "fire_station",   "lat": 30.7400, "lon": 76.7900, "address": "Chandigarh"},
+        {"name": "Chandigarh Ambulance",     "phone": "108",          "type": "ambulance",      "lat": 30.7333, "lon": 76.7794, "address": "Chandigarh"},
+        {"name": "Chandigarh Traffic Police","phone": "0172-2740200", "type": "highway_patrol", "lat": 30.7333, "lon": 76.7794, "address": "Chandigarh"}
+      ]
+    },
+    "guwahati": {
+      "lat": 26.1445, "lon": 91.7362,
+      "services": [
+        {"name": "GMCH Guwahati",            "phone": "0361-2529457", "type": "hospital",       "lat": 26.1600, "lon": 91.7560, "address": "Bhangagarh, Guwahati"},
+        {"name": "Guwahati Police Control",  "phone": "0361-2540213", "type": "police",         "lat": 26.1445, "lon": 91.7362, "address": "Guwahati"},
+        {"name": "Guwahati Fire Brigade",    "phone": "0361-2540101", "type": "fire_station",   "lat": 26.1500, "lon": 91.7400, "address": "Guwahati"},
+        {"name": "Assam Ambulance",          "phone": "108",          "type": "ambulance",      "lat": 26.1445, "lon": 91.7362, "address": "Guwahati"},
+        {"name": "Guwahati Traffic Police",  "phone": "0361-2540300", "type": "highway_patrol", "lat": 26.1445, "lon": 91.7362, "address": "Guwahati"}
+      ]
+    }
+  },
+  "generic_services": [
+    {"name": "Nearest Hospital",      "phone": "108",          "type": "hospital",      "distance_km": 2.5},
+    {"name": "Police Station",        "phone": "100",          "type": "police",        "distance_km": 1.8},
+    {"name": "Fire Station",          "phone": "101",          "type": "fire_station",  "distance_km": 3.0},
+    {"name": "Ambulance Service",     "phone": "108",          "type": "ambulance",     "distance_km": 2.0},
+    {"name": "Highway Patrol",        "phone": "1033",         "type": "highway_patrol","distance_km": 4.0},
+    {"name": "Roadside Mechanic",     "phone": "9696-969696",  "type": "mechanic",      "distance_km": 1.5},
+    {"name": "Towing Service",        "phone": "1033",         "type": "towing",        "distance_km": 2.2},
+    {"name": "Puncture Repair",       "phone": "112",          "type": "puncture_shop", "distance_km": 0.8}
+  ]
+}
