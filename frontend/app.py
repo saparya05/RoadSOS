@@ -1,16 +1,3 @@
-"""
-RoadSOS – Streamlit Frontend  (fully offline)
-
-All network calls removed:
-  • No Google Fonts CDN  →  system-safe font stack only
-  • No Overpass / OSM tile server  →  offline JSON + SVG map
-  • FastAPI call is localhost (optional) with direct-import fallback
-  • Voice STT uses Whisper offline-first
-  • Navigation links use OSM (open in browser, no API key)
-
-Run:  streamlit run frontend/app.py
-"""
-
 import sys, os, uuid, re
 from datetime import datetime
 
@@ -20,7 +7,7 @@ sys.path.insert(0, ROOT)
 import streamlit as st
 import requests
 
-# ── Page config ────────────────────────────────────────────────────────────────
+# Page config
 st.set_page_config(
     page_title="Road SOS",
     page_icon="🚨",
@@ -28,7 +15,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ── Constants ──────────────────────────────────────────────────────────────────
+# Constants
 API_BASE    = os.getenv("ROADSOS_API_URL", "http://localhost:8000")
 DEFAULT_LAT = 28.6139   # New Delhi fallback
 DEFAULT_LON = 77.2090
@@ -53,7 +40,7 @@ EMERGENCY_NUMBERS = [
 
 _QUICK_MAP = {label: text for label, text in QUICK_ACTIONS}
 
-# ── Session state ──────────────────────────────────────────────────────────────
+# Session state
 _DEFAULTS: dict = {
     "session_id":        lambda: str(uuid.uuid4()),
     "messages":          list,
@@ -71,14 +58,10 @@ for _k, _f in _DEFAULTS.items():
     if _k not in st.session_state:
         st.session_state[_k] = _f() if callable(_f) else _f
 
-# ── CSS – no external font CDN ─────────────────────────────────────────────────
+# CSS
 st.markdown("""
 <style>
-/*
-  Offline-safe font stack:
-  Tries system UI fonts → common installed fonts → generic sans-serif.
-  No CDN fetch whatsoever.
-*/
+
 *, *::before, *::after { box-sizing: border-box; }
 
 html, body, .stApp {
@@ -94,7 +77,11 @@ footer, #MainMenu, .stDeployButton,
 div[data-testid="stToolbar"],
 div[data-testid="stDecoration"] { display:none !important; }
 
-.main .block-container { padding:0 0 80px 0 !important; max-width:100% !important; }
+.main .block-container{
+    max-width:1200px !important;
+    margin:auto !important;
+    padding:24px 24px 120px 24px !important;
+}
 
 /* ── sidebar ── */
 section[data-testid="stSidebar"] {
@@ -212,10 +199,15 @@ section[data-testid="stSidebar"] .stButton>button:hover {
 }
 
 /* ── welcome ── */
-.welcome-wrap {
-    display:flex; flex-direction:column; align-items:center;
-    justify-content:center; min-height:46vh; text-align:center;
-    padding:40px 20px; gap:14px;
+.welcome-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:32vh;
+    text-align:center;
+    padding:24px;
+    gap:12px;
 }
 .welcome-icon { font-size:52px; }
 .welcome-title { font-size:26px; font-weight:700; color:#ECECF1; margin:0; }
@@ -223,30 +215,56 @@ section[data-testid="stSidebar"] .stButton>button:hover {
 .wnum-row {
     display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:8px;
 }
-.wnum-pill {
-    background:#1A1A26; border:1px solid #2A2A3E; border-radius:20px;
-    padding:5px 14px; font-size:13px; color:#A0AEC0;
+.wnum-pill{
+    background:#171722;
+    border:1px solid #2D3748;
+    border-radius:999px;
+    padding:8px 16px;
+    font-size:13px;
+    font-weight:500;
+    color:#CBD5E0;
 }
 .wnum-pill strong { color:#FC8181; }
 
 /* ── chat input ── */
-div[data-testid="stChatInput"] {
-    background:#0D0D14 !important; border-top:1px solid #1E1E2E !important;
-    padding:10px 20px 14px !important;
-    position:sticky !important; bottom:0 !important; z-index:90 !important;
+div[data-testid="stHorizontalBlock"]{
+    align-items:end !important;
 }
-div[data-testid="stChatInput"] > div {
-    max-width:760px !important; margin:0 auto !important;
-    background:#16161F !important; border:1px solid #2A2A3E !important;
-    border-radius:14px !important; box-shadow:none !important;
-}
-div[data-testid="stChatInput"] textarea {
-    background:transparent !important; color:#ECECF1 !important;
-    border:none !important; font-size:14px !important;
-    outline:none !important; box-shadow:none !important;
-}
-div[data-testid="stChatInput"] textarea::placeholder { color:#555 !important; }
 
+
+/* Chat input */
+
+div[data-testid="stChatInput"]{
+    padding:0 !important;
+    margin:0 !important;
+    background:transparent !important;
+    border:none !important;
+}
+
+/* Input field */
+
+div[data-testid="stChatInput"] > div{
+    height:52px !important;
+
+    background:#16161F !important;
+
+    border:1px solid #2D3748 !important;
+
+    border-radius:16px !important;
+
+    display:flex !important;
+    align-items:center !important;
+
+    margin:0 !important;
+}
+
+/* Visually merge mic + input */
+
+div[data-testid="stChatInput"] > div{
+    border-top-left-radius:16px !important;
+    border-bottom-left-radius:16px !important;
+}
+            
 /* ── sidebar internals ── */
 .sb-logo { padding:20px 16px 12px; border-bottom:1px solid #1E1E2E; }
 .sb-logo-title { font-size:16px; font-weight:700; color:#ECECF1; }
@@ -564,12 +582,25 @@ _inject_geo()
 # ── Voice transcription ────────────────────────────────────────────────────────
 
 def _transcribe(audio_bytes: bytes) -> str:
-    """Offline-first STT: Whisper → Sphinx → (Google online fallback)."""
     try:
+        print("AUDIO SIZE:", len(audio_bytes))
+
         from backend.voice_input import transcribe_audio_bytes
-        text, _ = transcribe_audio_bytes(audio_bytes, audio_format="webm")
+
+        text, engine = transcribe_audio_bytes(
+            audio_bytes,
+            audio_format="webm"
+        )
+
+        print("ENGINE:", engine)
+        print("TEXT:", repr(text))
+
         return text
-    except Exception:
+
+    except Exception as e:
+        import traceback
+        print("TRANSCRIBE ERROR")
+        traceback.print_exc()
         return ""
 
 
@@ -754,13 +785,15 @@ try:
             use_container_width=True,
             key="mic",
         )
+        print(audio)
+        print(type(audio))
     with inp_col:
         user_typed = st.chat_input(
             placeholder="Describe your emergency…",
             key="chat_in",
         )
     if audio and audio.get("bytes"):
-        with st.spinner("Transcribing…"):
+        with st.spinner("Listening..."):
             transcript = _transcribe(audio["bytes"])
         if transcript:
             st.session_state.pending_input = transcript
