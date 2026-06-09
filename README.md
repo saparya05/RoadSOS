@@ -12,8 +12,6 @@ An AI-powered road emergency assistant designed to operate entirely offline. Roa
 
 ## Demo
 
-🎥 **Project Demo:**
-
 [Demo Video.webm](https://github.com/user-attachments/assets/0c35fcab-3435-425d-8188-5e0bc5a2bd23)
 
 ---
