@@ -1,178 +1,236 @@
-# 🚨 RoadSOS – AI Emergency Assistant (Fully Offline)
+# RoadSOS – AI-Powered Offline Emergency Assistant
 
-> A complete AI-powered road emergency assistant that works **100% without internet**.
-> Detects emergencies, finds nearby services, shows an offline map, and supports voice input.
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-red)
+![SQLite](https://img.shields.io/badge/SQLite-Offline%20Database-lightgrey)
+![Offline First](https://img.shields.io/badge/Offline-First-success)
 
----
-
-## ✅ What Works Offline
-
-| Feature | Status | Notes |
-|---|---|---|
-| Emergency detection (NLP) | ✅ Offline | Pure keyword classifier |
-| Nearby service lookup | ✅ Offline | 19 cities, 142+ services in JSON |
-| National helplines | ✅ Offline | Always available |
-| Chat history (SQLite) | ✅ Offline | Local DB, no cloud |
-| Interactive map | ✅ Offline | Pure SVG, no tile server |
-| Voice input (Whisper) | ✅ Offline* | *39 MB model download once |
-| Voice input (Vosk) | ✅ Offline* | *Separate model download |
-| Navigation links | ✅ Offline | Opens OSM in browser |
-| Call buttons | ✅ Offline | `tel:` links work without internet |
-| FastAPI backend | ✅ Offline | All endpoints use local data |
+An AI-powered road emergency assistant designed to operate entirely offline. RoadSOS helps users identify emergencies, locate nearby services, access emergency helplines, and interact through voice commands without relying on cloud services or an active internet connection.
 
 ---
 
-## 🏗️ Project Structure
+## Demo
 
+🎥 **Project Demo:**
+[Add your demo video link here]
+
+Example:
+
+* YouTube: `https://youtube.com/...`
+* Google Drive: `https://drive.google.com/...`
+* GitHub Asset URL
+
+---
+
+## Key Features
+
+### Emergency Detection
+
+* Offline NLP-based emergency classification
+* Instant identification of road accidents and critical situations
+* No internet dependency
+
+### Nearby Service Discovery
+
+* Search nearby hospitals, police stations, towing services, and fuel stations
+* Uses locally stored service database
+* Supports 19 major Indian cities
+
+### Offline Interactive Map
+
+* Pure SVG-based rendering
+* No external map providers
+* Local Mercator projection implementation
+
+### Voice Assistance
+
+* Offline speech-to-text support
+* Whisper Tiny
+* Vosk
+* PocketSphinx
+* Automatic fallback mechanism
+
+### Emergency Helplines
+
+* National emergency contacts available at all times
+* Accessible even without network connectivity
+
+### Local Data Storage
+
+* SQLite-based chat history
+* No cloud storage
+* Privacy-focused architecture
+
+---
+
+## Offline Capability Matrix
+
+| Feature                    | Offline Support |
+| -------------------------- | --------------- |
+| Emergency Detection        | ✅               |
+| Service Discovery          | ✅               |
+| Emergency Helplines        | ✅               |
+| SQLite Storage             | ✅               |
+| Interactive Map            | ✅               |
+| Voice Input (Whisper/Vosk) | ✅               |
+| Navigation Links           | ✅               |
+| FastAPI Backend            | ✅               |
+
+---
+
+## System Architecture
+
+```text
+User
+ │
+ ▼
+Streamlit Frontend
+ │
+ ├── Voice Input
+ ├── Offline Map
+ ├── Chat Interface
+ │
+ ▼
+FastAPI Backend
+ │
+ ├── Emergency Classifier
+ ├── Service Finder
+ ├── Offline Services Database
+ ├── SQLite Storage
+ └── Voice Processing Engine
 ```
+
+---
+
+## Project Structure
+
+```text
 RoadSOS/
 ├── backend/
-│   ├── __init__.py
-│   ├── chatbot.py              ← conversation engine (offline)
-│   ├── database.py             ← SQLite persistence (offline)
-│   ├── emergency_classifier.py ← NLP classifier (offline)
-│   ├── main.py                 ← FastAPI server (offline)
-│   ├── offline_services.py     ← JSON service lookup (offline)
-│   ├── service_finder.py       ← service search – offline only
-│   └── voice_input.py          ← STT: Whisper → Vosk → Sphinx
+│   ├── chatbot.py
+│   ├── database.py
+│   ├── emergency_classifier.py
+│   ├── main.py
+│   ├── offline_services.py
+│   ├── service_finder.py
+│   └── voice_input.py
 │
 ├── frontend/
-│   ├── app.py                  ← Streamlit UI (offline)
-│   └── map_view.py             ← Pure SVG map (offline, no tiles)
+│   ├── app.py
+│   └── map_view.py
 │
 ├── data/
-│   ├── offline_services.json   ← 19 cities, 142+ services
-│   └── roadsos.db              ← SQLite (auto-created)
+│   ├── offline_services.json
+│   └── roadsos.db
 │
 ├── requirements.txt
-├── run.sh                      ← Linux/Mac launcher
-├── run.bat                     ← Windows launcher
+├── run.sh
+├── run.bat
 └── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+## Installation
 
-### Step 1 – Clone / unzip
+### Clone Repository
 
 ```bash
+git clone <repository-url>
 cd RoadSOS
 ```
 
-### Step 2 – Install dependencies
+### Install Dependencies
 
 ```bash
-# Linux / Mac
-bash run.sh install
-
-# Windows
-run.bat install
-
-# Or manually:
 pip install -r requirements.txt
 ```
 
-### Step 3 – Download offline STT model (optional but recommended)
-
-For voice input to work **without internet**:
+Or use helper scripts:
 
 ```bash
-# Linux / Mac
-bash run.sh download-stt
-
-# Windows
-run.bat download-stt
-
-# Or manually (downloads ~39 MB Whisper tiny model):
-python -c "import whisper; whisper.load_model('tiny')"
+bash run.sh install
 ```
 
-> **Without this step**, voice input falls back to Google Speech API (needs internet).
-> Text input works perfectly without any model download.
+```cmd
+run.bat install
+```
 
 ---
 
-## 🚀 Running the App
+## Optional: Enable Offline Voice Recognition
 
-### Option A – Streamlit only (recommended, no API needed)
+Download the Whisper Tiny model:
 
 ```bash
-bash run.sh          # Linux/Mac
-run.bat              # Windows
-streamlit run frontend/app.py   # Direct
+python -c "import whisper; whisper.load_model('tiny')"
 ```
 
-Open: **http://localhost:8501**
+Without this setup, the application falls back to online speech recognition services.
 
-### Option B – Full stack (FastAPI + Streamlit)
+---
+
+## Running the Application
+
+### Streamlit Mode
+
+```bash
+streamlit run frontend/app.py
+```
+
+Open:
+
+```text
+http://localhost:8501
+```
+
+### Full Stack Mode
 
 ```bash
 bash run.sh full
 ```
 
-- Frontend: http://localhost:8501
-- API docs:  http://localhost:8000/docs
+Services:
+
+* Frontend → `http://localhost:8501`
+* API Docs → `http://localhost:8000/docs`
 
 ---
 
-## 🗣️ Voice Input
+## Supported Cities
 
-The app uses **streamlit-mic-recorder** for browser-based microphone access.
+RoadSOS currently provides offline service coverage for:
 
-1. Click the **🎙️** button next to the chat input
-2. Speak your emergency
-3. Click **⏹️** to stop
-4. Your speech is transcribed and sent automatically
+Delhi, Mumbai, Bangalore, Chennai, Hyderabad, Kolkata, Pune, Ahmedabad, Jaipur, Lucknow, Surat, Patna, Bhopal, Indore, Nagpur, Visakhapatnam, Kochi, Chandigarh, and Guwahati.
 
-**STT Engine priority** (all offline except the last):
-1. **Whisper** (recommended) – run `bash run.sh download-stt` once
-2. **Vosk** – download model from https://alphacephei.com/vosk/models → extract to `data/vosk-model-small-en-in-0.4/`
-3. **Sphinx** – install `pocketsphinx`
-4. **Google** – online fallback only
+For unsupported locations, national emergency helplines remain available.
 
 ---
 
-## 🗺️ Offline Map
+## Emergency Helplines
 
-The map is built with **pure Python SVG math** – no tile server, no Leaflet CDN, no internet.
-
-- Mercator projection computed locally
-- Grid lines, range circles, service markers all rendered as SVG
-- Click any service marker for name, phone, and navigation link
-- Navigation opens **OpenStreetMap** in browser (works without app internet)
-
----
-
-## 📴 Offline Service Coverage
-
-**19 cities with full service data:**
-Delhi · Mumbai · Bangalore · Chennai · Hyderabad · Kolkata · Pune · Ahmedabad ·
-Jaipur · Lucknow · Surat · Patna · Bhopal · Indore · Nagpur · Visakhapatnam ·
-Kochi · Chandigarh · Guwahati
-
-**Always available (national helplines):**
-
-| Service | Number |
-|---|---|
-| National Emergency | 112 |
-| Ambulance (EMRI) | 108 |
-| Police | 100 |
-| Fire Brigade | 101 |
-| Highway Helpline | 1033 |
-| NDRF / Disaster | 1078 |
-| Women Helpline | 1091 |
-| Child Helpline | 1098 |
-
-**Outside covered cities:** Generic services with national helpline numbers are shown.
+| Service            | Number |
+| ------------------ | ------ |
+| National Emergency | 112    |
+| Ambulance          | 108    |
+| Police             | 100    |
+| Fire Brigade       | 101    |
+| Highway Helpline   | 1033   |
+| Disaster Response  | 1078   |
+| Women Helpline     | 1091   |
+| Child Helpline     | 1098   |
 
 ---
 
-## 🔌 API Reference
+## API Endpoints
 
-All endpoints work offline (no external calls):
+### Chat
 
-### `POST /chat`
+```http
+POST /chat
+```
+
 ```json
 {
   "text": "My car met with an accident",
@@ -181,27 +239,59 @@ All endpoints work offline (no external calls):
 }
 ```
 
-### `GET /services/all?lat=28.6139&lon=77.2090`
+### Services
 
-### `POST /voice`
-Upload audio file → returns `{ "text": "...", "engine": "whisper", "offline": true }`
+```http
+GET /services/all
+```
 
-### `GET /helplines`
+### Voice Processing
 
-### `GET /stats`
+```http
+POST /voice
+```
+
+### Helplines
+
+```http
+GET /helplines
+```
+
+### Statistics
+
+```http
+GET /stats
+```
 
 ---
 
-## 🛠️ Troubleshooting
+## Technology Stack
 
-| Problem | Fix |
-|---|---|
-| Voice not working | Run `bash run.sh download-stt` to cache Whisper model |
-| Location shows Delhi | Allow browser GPS permission, or override in sidebar |
-| No services found | Your city may not be in offline database – national helplines always shown |
-| Map looks plain | Expected – SVG map, no satellite tiles (offline mode) |
-| API not responding | App works without API (embedded mode) – ignore this |
+* Python
+* FastAPI
+* Streamlit
+* SQLite
+* Whisper
+* Vosk
+* PocketSphinx
+* SVG Rendering
 
 ---
 
-*Built for road safety. In any emergency, call **112** first.*
+## Future Enhancements
+
+* Multilingual emergency support
+* Offline route guidance
+* AI-powered incident severity prediction
+* SMS-based emergency alerts
+* Expanded city coverage
+
+---
+
+## License
+
+This project is intended for educational, research, and road-safety applications.
+
+---
+
+**Important:** In any real emergency, immediately contact **112** or your local emergency services.
