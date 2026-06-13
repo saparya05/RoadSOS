@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-red)
-![SQLite](https://img.shields.io/badge/SQLite-Offline%20Database-lightgrey)
+![SQLite](https://img.shields.io/badge/SQLite-Offline%20Database-yellow)
 ![Offline First](https://img.shields.io/badge/Offline-First-success)
 
 An AI-powered road emergency assistant designed to operate entirely offline. RoadSOS helps users identify emergencies, locate nearby services, access emergency helplines, and interact through voice commands without relying on cloud services or an active internet connection.
